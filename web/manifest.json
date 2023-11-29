@@ -1,11 +1,11 @@
 {
-    "name": "mellnify2",
-    "short_name": "mellnify2",
+    "name": "cpadtrialmindease",
+    "short_name": "cpadtrialmindease",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Mental Health and wellness app",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
