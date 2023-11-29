@@ -1,6 +1,6 @@
-# MindBody - Achieve Balance & Wellness
+# Mellnify - Achieve Balance & Wellness
 
-MindBody is your go-to mental health companion, dedicated to guiding you toward a more balanced and healthier state of mind. Emphasizing well-being and self-awareness, MindBody has features that supports your mental health journey.
+Mellnify is your go-to mental health companion, dedicated to guiding you toward a more balanced and healthier state of mind. Emphasizing well-being and self-awareness, Mellnify has features that supports your mental health journey.
 
 ## Features
 
@@ -19,4 +19,4 @@ MindBody is your go-to mental health companion, dedicated to guiding you toward 
 
 This project is licensed under the [MIT License](LICENSE).
 
-**Find your inner balance, nurture your well-being, and embrace a healthier you with MindBody.**
+**Find your inner balance, nurture your well-being, and embrace a healthier you with Mellnify.**
