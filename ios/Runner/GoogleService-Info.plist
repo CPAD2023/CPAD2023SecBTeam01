@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1075652152028-mmth8p2dkknkaefc56b5nfabjdthltpo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1075652152028-mmth8p2dkknkaefc56b5nfabjdthltpo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBhSF1ovt5iZO-LxUR5jHkFQQIk6YuU418</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1075652152028</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.cpadtrialmindease</string>
+	<key>PROJECT_ID</key>
+	<string>mindease-661f6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mindease-661f6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1075652152028:ios:70c58a93f4d8afdf5fc219</string>
+</dict>
+</plist>

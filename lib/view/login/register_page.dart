@@ -8,39 +8,44 @@ import 'package:flutter/material.dart';
 
 import '../main_tab/main_tab_view.dart';
 
-class LoginView extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   
   final Function()? onTap;
-  const LoginView({super.key, required this.onTap});
+  const RegisterPage({super.key, required this.onTap});
   
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _RegisterPageState extends State<RegisterPage> {
   bool isCheck = false;
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
-  void logUserIn() async {
-    showDialog(context: context, builder: (context){
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    });
+  void signUserUp() async {
+    // showDialog(context: context, builder: (context){
+    //   return const Center(
+    //     child: CircularProgressIndicator(),
+    //   );
+    // });
     try{
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text, 
-        password: passwordController.text
-        );
-        Navigator.pop(context);
+      if(passwordController.text == confirmPasswordController.text){
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text, 
+          password: passwordController.text
+          );
+          
+      }else{
+        showErrorMessage("Passwords don't match!");
+        
+      }
+        
 
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context);
-      
-      wrongCredentialsMessage(e.code);
+      showErrorMessage(e.code);
       
     }
 
@@ -49,7 +54,8 @@ class _LoginViewState extends State<LoginView> {
   }
 
   //wrong email message pop up
-  void wrongCredentialsMessage(String message){
+  void showErrorMessage(String message){
+    
     showDialog(
       context: context,
       builder: (context){
@@ -92,32 +98,32 @@ class _LoginViewState extends State<LoginView> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: media.width * 0.02),
+                SizedBox(height: media.width * 0.01),
                 Text(
                   "Hey there,",
                   style: TextStyle(color: TColor.gray, fontSize: 16),
                 ),
-                SizedBox(height: media.width * 0.02),
+                SizedBox(height: media.width * 0.01),
                 Text(
-                  "Welcome Back",
+                  "Welcome, let's create an account for you!",
                   style: TextStyle(
                       color: TColor.black,
                       fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
                 SizedBox(
-                  height: media.width * 0.05,
+                  height: media.width * 0.02,
                 ),
-                SizedBox(
-                  height: media.width * 0.04,
-                ),
+                // SizedBox(
+                //   height: media.width * 0.04,
+                // ),
                 RoundTextField(
                   controller: emailController,
                   hitText: "Email",
                   icon: "assets/img/email.png"
                 ),
                 SizedBox(
-                  height: media.width * 0.04,
+                  height: media.width * 0.03,
                 ),
                 RoundTextField(
                   controller: passwordController,
@@ -126,24 +132,20 @@ class _LoginViewState extends State<LoginView> {
                   obscureText: true,
                   
                 ),
-                SizedBox(height: media.width * 0.04),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Forgot your password?",
-                      style: TextStyle(
-                          color: TColor.gray,
-                          fontSize: 10,
-                          decoration: TextDecoration.underline),
-                    ),
-                  ],
-                ),
                 SizedBox(height: media.width * 0.03),
+                RoundTextField(
+                  controller: confirmPasswordController,
+                  hitText: "Confirm Password",
+                  icon: "assets/img/lock.png",
+                  obscureText: true,
+                  
+                ),
+                
+                SizedBox(height: media.width * 0.04),
               //  const Spacer(),
                 RoundButton(
-                    title: "Login",
-                    onPressed: logUserIn
+                    title: "Sign Up",
+                    onPressed: signUserUp
                     // () async {
                     //   // await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
                     //   Navigator.push(
@@ -153,7 +155,7 @@ class _LoginViewState extends State<LoginView> {
                     //               const MainTabView()));
                     // }
                     ),
-                    SizedBox(height: media.width * 0.03),
+                    SizedBox(height: media.width * 0.04),
                      Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: Row(
@@ -210,14 +212,14 @@ class _LoginViewState extends State<LoginView> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Not a member?',
+                                'Already have an account?',
                                 style: TextStyle(color: Colors.grey[700]),
                               ),
                               const SizedBox(width: 4),
                               GestureDetector(
                                 onTap: widget.onTap,
                                 child: const Text(
-                                  'Register now',
+                                  'Login now',
                                   style: TextStyle(
                                     color: Colors.blue,
                                     fontWeight: FontWeight.bold,

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness/common_widget/round_button.dart';
 import 'package:flutter/material.dart';
 import '../../common/colo_extension.dart';
@@ -14,6 +15,8 @@ class HomeView extends StatefulWidget {
 enum Mood { Smile, Sad, Angry, Anxiety, Neutral }
 
 class _HomeViewState extends State<HomeView> {
+
+  final user = FirebaseAuth.instance.currentUser!;
 
   Mood selectedMood = Mood.Smile;
 
@@ -99,7 +102,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         Center(
                           child: Text(
-                            "Hi, User",
+                            "Hi, " + user.email!,
                             style: TextStyle(color: TColor.gray, fontSize: 20),
                           ),
                         ),

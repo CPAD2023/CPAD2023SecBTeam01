@@ -47,6 +47,11 @@ dependencies:
   calendar_agenda:
     path: dev_lib/calendar_agenda/
   intl: ^0.18.1
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.15.0
+  google_sign_in: ^6.1.6
+  google_sign_in_web: ^0.12.2
+  google_sign_in_dartio: ^0.2.2+1
 
 dependency_overrides: 
   intl: ^0.18.1

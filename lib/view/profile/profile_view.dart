@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../../common/colo_extension.dart';
 import 'accountDetails.dart';
@@ -14,10 +15,23 @@ class _ProfileViewState extends State<ProfileView> {
   bool isDarkMode = false;
   bool _notificationsEnabled = true;
 
+  void signUserOut(){
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions:[
+          IconButton(
+            onPressed:signUserOut,
+            icon:Icon(
+              Icons.logout,
+              color:Colors.black
+              ),
+            )
+        ],
         backgroundColor: Colors.white,
         centerTitle: true,
         elevation: 0,
@@ -143,6 +157,7 @@ class _ProfileViewState extends State<ProfileView> {
                 },
               ),
               const SizedBox(height: 25),
+
             ],
           ),
         ),

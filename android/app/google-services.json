@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1075652152028",
+    "project_id": "mindease-661f6",
+    "storage_bucket": "mindease-661f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075652152028:android:bbd3c3dc07a70adf5fc219",
+        "android_client_info": {
+          "package_name": "com.example.cpadtrialmindease"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075652152028-6673jdbqqv492u192enrvm84frdru4ro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cpadtrialmindease",
+            "certificate_hash": "308cb4b5b620755407369f8f390cfeed61015ea5"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVM6WI8kvRbnPC8b71VXAMwfQuZNMb7Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075652152028-mmth8p2dkknkaefc56b5nfabjdthltpo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cpadtrialmindease"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
