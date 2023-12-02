@@ -36,7 +36,7 @@ class _ProfileViewState extends State<ProfileView> {
       return ClipRRect(
         borderRadius: BorderRadius.circular(30),
         child: Image.asset(
-          "assets/img/u2.png",
+          "assets/img/user_pic.png",
           width: 50,
           height: 50,
           fit: BoxFit.cover,

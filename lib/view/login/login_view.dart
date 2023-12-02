@@ -153,7 +153,7 @@ class _LoginViewState extends State<LoginView> {
                     //               const MainTabView()));
                     // }
                     ),
-                    SizedBox(height: media.width * 0.03),
+                    SizedBox(height: media.width * 0.02),
                      Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: Row(
@@ -180,7 +180,7 @@ class _LoginViewState extends State<LoginView> {
                         ],
                       ),
                     ),
-                    SizedBox(height: media.width * 0.02),
+                    SizedBox(height: media.width * 0.01),
 
                    // google sign in buttons
                     Row(
