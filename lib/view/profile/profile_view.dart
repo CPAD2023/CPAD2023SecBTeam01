@@ -18,6 +18,32 @@ class _ProfileViewState extends State<ProfileView> {
   void signUserOut(){
     FirebaseAuth.instance.signOut();
   }
+  final user = FirebaseAuth.instance.currentUser!;
+  Widget buildProfileImage() {
+    if (user.photoURL != null) {
+      // User has a profile picture from Google Sign-In
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: Image.network(
+          user.photoURL!,
+          width: 50,
+          height: 50,
+          fit: BoxFit.cover,
+        ),
+      );
+    } else {
+      // Use the default image if no Google profile picture exists
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: Image.asset(
+          "assets/img/u2.png",
+          width: 50,
+          height: 50,
+          fit: BoxFit.cover,
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,22 +80,23 @@ class _ProfileViewState extends State<ProfileView> {
             children: [
               Row(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.asset(
-                      "assets/img/u2.png",
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  buildProfileImage(),
+                  // ClipRRect(
+                  //   borderRadius: BorderRadius.circular(30),
+                  //   child: Image.asset(
+                  //     "assets/img/u2.png",
+                  //     width: 50,
+                  //     height: 50,
+                  //     fit: BoxFit.cover,
+                  //   ),
+                  // ),
                   const SizedBox(width: 15),
-                  const Expanded(
+                  Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "User",
+                          user.email!,
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 14,
